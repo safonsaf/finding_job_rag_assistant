@@ -1,0 +1,25 @@
+jobgpt/
+├── app/
+│   ├── main.py                    # точка входа (FastAPI, запуск сервера)  'подключен эндпоинт загрузки резюме'
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── endpoints/
+│   │       ├── __init__.py
+│   │       └── upload_resume.py   # эндпоинт загрузки резюме 'код готов' 
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── resume_parser.py       # логика парсинга резюме, подключение к qwen3 для выделения опыта из резюме 'код готов' 
+│   │   ├── vacancy_parser.py      # парсинг текста вакансии
+│   │   ├── rag_preprocess.py      # предобработка текстов вакансикй и откликов перед
+                                   # загрузкой в векторную бд 'код готов' 
+        ├── rag_faiss.py           # текст в эмбединги и создание индексов в faiss 'код готов' 
+│   │   ├── prompt_builder.py      # сборка промпта
+│   │   └── generate.py            # вызов LLM
+│   ├── embeddings/
+        ├── few_shot_corpus.jsonl  # FAISS индекс и векторы
+│   └── data/
+│       └── few_shot_examples.jsonl
+├── static/                        # загруженные резюме и стили
+├── .env
+├── requirements.txt
+└── Dockerfile  

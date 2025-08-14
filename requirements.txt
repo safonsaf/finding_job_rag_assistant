@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+together
+pdfplumber
+python-docx
+sentence-transformers
+faiss-cpu
+pydantic
+python-dotenv
+jinja2
